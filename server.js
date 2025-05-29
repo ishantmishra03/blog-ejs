@@ -7,7 +7,8 @@ const path = require('path');
 require('dotenv').config();
 
 const userModel = require('./models/user.models');
-const postModel = require('./models/post.models')
+const postModel = require('./models/post.models');
+const upload = require('./config/multer.config')
 
 const PORT = process.env.PORT || 3000;
 
@@ -80,9 +81,10 @@ app.get('/profile', isLoggedIn, async (req, res) => {
 
 //Logout
 app.get('/logout', isLoggedIn, (req, res) => {
-    res.cookie("token", "");
+    res.clearCookie("token"); 
     res.redirect("/login");
-})
+});
+
 
 // Middleware to verify if loggedIn 
 function isLoggedIn(req, res, next) {
@@ -144,8 +146,22 @@ app.post('/update/:id', isLoggedIn, async (req, res) => {
     res.redirect("/profile");
 })
 
+//AddProfilePhoto GET
+app.get('/profile-pic', (req,res) => {
+    res.render("profilePhoto")
+})
+
+//Add Profile Pic POST
+app.post('/upload', isLoggedIn, upload.single("image"), async(req,res) => {
+    const user = await userModel.findOne({email: req.user.email});
+    user.profilePicture = req.file.filename;
+    await user.save();
+
+    res.redirect("/profile");
+})
+
 app.listen(PORT, () => {
-    console.log(`Server si running on http://localhost:${PORT}`);
+    console.log(`Server is listening on http://localhost:${PORT}`);
 
 })
 
