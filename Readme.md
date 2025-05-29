@@ -1,6 +1,8 @@
-# Blogify EJS
+# Blog EJS
 
 A full-featured blog application built using **Node.js**, **Express.js**, **MongoDB**, and **EJS** as the templating engine. This app allows users to sign up, log in, create and edit blogs, and upload profile pictures.
+
+📂 **Note:** Profile pictures are uploaded and stored on disk using `multer` with `diskStorage`.
 
 ## 🚀 Features
 
