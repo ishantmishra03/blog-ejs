@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-black min-h-screen flex items-center justify-center p-4">
+
+    <div class="w-full max-w-sm bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20 text-white">
+      <h2 class="text-xl font-medium text-center text-blue-400 mb-4">Login to your Account</h2>
+
+      <form class="space-y-3" method="post" action="/login">
+        
+
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          class="w-full bg-transparent border border-blue-500 text-white placeholder-blue-300 px-3 py-2 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          name="password"
+          class="w-full bg-transparent border border-blue-500 text-white placeholder-blue-300 px-3 py-2 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"
+        />
+
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded"
+        >
+          Login
+        </button>
+      </form>
+
+      <p class="text-center text-sm text-gray-300 mt-4">
+        Don't have an account?
+        <a href="/" class="text-blue-400 hover:underline">Sign Up</a>
+      </p>
+    </div>
+
+  </body>
+</html>
