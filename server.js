@@ -8,7 +8,9 @@ require('dotenv').config();
 
 const userModel = require('./models/user.models');
 const postModel = require('./models/post.models');
-const upload = require('./config/multer.config')
+const upload = require('./config/multer.config');
+const connectDB = require('./config/db.config');
+connectDB();
 
 const PORT = process.env.PORT || 3000;
 
