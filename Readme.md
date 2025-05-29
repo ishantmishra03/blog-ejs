@@ -59,10 +59,6 @@ Open your browser and go to: [http://localhost:3000](http://localhost:3000)
 Contributions, issues and feature requests are welcome!  
 Feel free to fork this repo and submit a pull request.
 
-## 📜 License
-
-This project is licensed under the [MIT License](LICENSE).
-
 ---
 
 > Made  by [@ishantmishra03](https://github.com/ishantmishra03)
